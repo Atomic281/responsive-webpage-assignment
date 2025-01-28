@@ -16,11 +16,10 @@ header {
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  margin: 20px;
 }
 
 /* Box Styling */
@@ -33,56 +32,40 @@ main {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Title Placement */
 .box .title {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #d9534f; /* Default color */
+  background-color: #333;
   color: white;
-  padding: 8px 15px;
+  padding: 5px 15px;
   font-size: 1em;
   font-weight: bold;
   border-top-left-radius: 5px;
 }
 
 /* Specific Colors for Each Box */
-.chicken .title {
-  background-color: #d9534f; /* Reddish */
+.chicken {
+  background-color: #f8d7da;
 }
 
-.beef .title {
-  background-color: #c9302c; /* Darker Red */
+.beef {
+  background-color: #f5c6cb;
 }
 
-.sushi .title {
-  background-color: #f0ad4e; /* Yellow/Orange */
+.sushi {
+  background-color: #ffeeba;
 }
 
-/* Responsive Layouts */
-
-/* Desktop (992px and above) */
-@media (min-width: 992px) {
-  .box {
-    width: 30%;
-  }
+/* Grid Layout Adjustments */
+.chicken {
+  grid-column: 1;
 }
 
-/* Tablet (768px to 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .box:nth-child(1),
-  .box:nth-child(2) {
-    width: 48%;
-  }
-
-  .box:nth-child(3) {
-    width: 100%;
-  }
+.beef {
+  grid-column: 2;
 }
 
-/* Mobile (767px and below) */
-@media (max-width: 767px) {
-  .box {
-    width: 100%;
-  }
+.sushi {
+  grid-column: span 2;
 }
